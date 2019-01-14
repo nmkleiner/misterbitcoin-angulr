@@ -1,0 +1,142 @@
+// general
+.p-10 {
+  padding: 10px;
+}
+
+.pb-10 {
+  padding-bottom: 10px;
+}
+.pl-10 {
+  padding-left: 10px; 
+}
+.pr-10 {
+  padding-right: 10px; 
+}
+.px-10 {
+  padding: 0 10px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mt-20{
+  margin-top: 20px;
+}
+.mt-5{
+  margin-top: 5px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+/* Flex */
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-self-start {
+  align-self: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-self-start {
+  justify-self: flex-start;
+}
+
+.justify-self-center {
+  justify-self: center;
+}
+
+.justify-self-end {
+  justify-self: flex-end;
+}
+
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-grow{
+  flex-grow: 1;
+}
+
+// text
+.capitalize {
+  text-transform: capitalize;
+}
+.bold {
+  font-weight: bold;
+}
+.white-text{
+  color: white;
+}
+.green-text{
+  color: green;
+}
+.red-text{
+  color: red;
+}
+.text-center{
+  text-align: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+// images
+.circle{
+  border-radius: 50%;
+}
+
+.user-icon {
+  width: 48px;
+  height: 48px;
+}
+
