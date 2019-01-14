@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-navbar',
   template: `
   <header class="flex space-between">
-    <a routerLink="/home"><h3 class="capitalize pointer">mister bitcoin</h3></a>
+    <a routerLink=""><h3 class="capitalize pointer">mister bitcoin</h3></a>
     <nav class="flex">
       <a class="justify-self-end" routerLink="/contact"><i class="fas fa-list-ul"></i></a>
       <a routerLink="/statistic"><i class="fas fa-chart-line"></i></a>

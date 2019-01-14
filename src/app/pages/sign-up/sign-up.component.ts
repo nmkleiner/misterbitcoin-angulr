@@ -5,18 +5,39 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-sign-up',
   template: `
-    <div className="signupPage">
-         Hey please sign up
+    <div class="signupPage">
+         <span>Hey please sign up</span>
          <form (submit)="handleSubmit($event)">
              <input type="text"
                  [value]="user.username"
                  (change)="handleNameChange($event)"
+                 placeholder="username"
              />
-             <button type="submit">enter</button>
+             <button type="submit">sign up</button>
          </form>
      </div>
   `,
-  styles: []
+  styles: [`
+    .signupPage{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .signupPage form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .signupPage input{
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    .signupPage span{
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    `]
 })
 export class SignUpComponent implements OnInit {
 
@@ -30,7 +51,7 @@ export class SignUpComponent implements OnInit {
     ev.preventDefault();
     this.userService.signup(this.user.username)
     // this.props.handleSubmit()
-    this.router.navigate(['/home'])
+    this.router.navigate([''])
 
   }
 

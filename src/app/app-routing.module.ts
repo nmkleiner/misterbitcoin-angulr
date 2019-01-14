@@ -11,7 +11,7 @@ import { StatisticPageComponent } from './pages/statistic-page/statistic-page.co
 
 
 const routes: Routes = [
-  { path: 'home', component: HomePageComponent },
+  { path: '', component: HomePageComponent },
   { path: 'contact', component: ContactPageComponent },
   { path: 'contact/edit', component: ContactEditComponent },
   { path: 'contact/:id', component: ContactDetailsComponent },

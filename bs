@@ -1,0 +1,3 @@
+ng build --prod --output-path misterbitcoin-angulr --base-href="https://nmkleiner.github.io/misterbitcoin-angulr/" - build for gh pages
+
+ngh --dir=dist/misterbitcoin - deploy gh-pages

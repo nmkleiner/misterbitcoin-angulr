@@ -3,8 +3,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-contact-filter',
   template: `
-    <div class="contactFilter">
-      <input type="text" [(ngModel)]="filter" (input)="setFilter()"/>
+    <div class="contactFilter mb-10">
+      <input type="text"
+      [(ngModel)]="filter"
+      (input)="setFilter()"
+      placeholder="search"
+      />
     </div>
   `,
   styles: []

@@ -10,8 +10,10 @@ import { UserService } from '../../services/user.service';
       <i class="fas fa-plus"></i>
     </button>
   </a>
-  <app-contact-filter (onFilter)="setFilter($event)"></app-contact-filter>
-  <app-contact-list (listEvent)="changeContactOrder($event)" [contacts]="contacts"></app-contact-list>
+  <div class="wrapper flex-column align-center">
+    <app-contact-filter (onFilter)="setFilter($event)"></app-contact-filter>
+    <app-contact-list (listEvent)="changeContactOrder($event)" [contacts]="contacts"></app-contact-list>
+  </div>
   `,
   styles: []
 })
