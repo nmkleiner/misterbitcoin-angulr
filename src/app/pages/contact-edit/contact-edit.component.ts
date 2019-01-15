@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-contact-edit',
   template: `
-    <div class="contact-edit" *ngIf="contact._id">
+    <div class="contact-edit">
       <form (submit)="submit()" class="flex-column">
         <label>Name: <input type="text" [(ngModel)]="contact.name" name="name" #name="ngModel" /></label>
         <label>Email: <input type="text" [(ngModel)]="contact.email" name="email" #name="ngModel"/></label>
@@ -14,14 +14,6 @@ import { Router } from '@angular/router';
       </form>
     </div>
   `,
-
-
-// <input type="number"
-//             min="0"
-//             [(ngModel)]="coinsToTransfer"
-//             name="coinsToTransfer"
-//             #name="ngModel"
-//             />
   styles: [`
     .contact-edit {
       padding: 10px;
@@ -44,11 +36,12 @@ export class ContactEditComponent implements OnInit {
      private contactService: ContactService,
      private router: Router) { }
 
-  contact = { _id:'', name: '', email: '', phone: '', pic: '' }
+  contact = { _id:'', name: '', email: '', phone: '', pic: '', transfers: [] }
   ngOnInit() {
     this.route.queryParams
       .subscribe(params => {
-        this.getContact(params.id)
+        if (params.id) this.getContact(params.id)
+        // else this.initContact()
       });
 
   }
@@ -56,9 +49,13 @@ export class ContactEditComponent implements OnInit {
   async getContact(contactId) {
     this.contact = await this.contactService.getContactById(contactId)
   }
+
+
+
   submit() {
+    if (!this.contact._id) this.contactService.saveContact(this.contact)
     this.contactService.updateContact(this.contact)
-    const route = '/contact/;contact?id=' + this.contact._id
+    // const route = '/contact/;contact?id=' + this.contact._id
     this.router.navigateByUrl(`/contact/contact?id=${this.contact._id}`)
   }
 }

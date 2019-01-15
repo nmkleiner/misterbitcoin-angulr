@@ -41,10 +41,9 @@ export class ContactService {
         transfers: [],
         order: contact.order
     }
-
+    console.log('contact saving:',contact)
     if (!contact._id) {
-        const _id = utilService.makeId(6)
-        contact._id = _id
+        contact._id = utilService.makeId(6)
         this.contactsDB.push(contact)
     } else {
         const idx = this.contactsDB.findIndex(cont => cont._id === contact._id)
@@ -55,6 +54,7 @@ export class ContactService {
   }
 
   updateContact(updatedContact) {
+    if (!updatedContact._id) updatedContact._id = utilService.makeId(6)
     const idx = this.contactsDB.findIndex((contact) => contact._id === updatedContact._id)
     this.contactsDB.splice(idx,1,updatedContact)
     storageService.saveToStorage(this.key,this.contactsDB)
